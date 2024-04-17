@@ -1,5 +1,5 @@
 // Importer XMLHttpRequest car node !== navigateur
-const XMLHttpRequest = require('xhr2');
+let xhttp = new XMLHttpRequest();
 
 // Variables pour serveur et requête
 const yourServerUrl = 'https://diegesis.bible/graphql'
