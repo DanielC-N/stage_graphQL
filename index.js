@@ -1,4 +1,6 @@
 // Importer XMLHttpRequest car node !== navigateur
+// import XMLHttpRequest from 'xhr2';
+// const XMLHttpRequest = require('xhr2');
 
 // Variables pour serveur et requête
 const yourServerUrl = 'https://diegesis.bible/graphql'
@@ -34,7 +36,7 @@ xhr.open('POST', yourServerUrl);
 xhr.setRequestHeader('Content-Type', 'application/json');
 
 const entryRecords = function (response) {
-    console.log(JSON.stringify(response, null, 4))
+    // console.log(JSON.stringify(response, null, 4))
 	return response["data"]["localEntries"]
 }
 
@@ -49,11 +51,12 @@ xhr.onload = function () {
     let transId = ""
     let idlastmodif = ""
 	const ret = []
+    const retJson = []
 	ret.push("<table>")
 	for (const record of entryRecords(xhr.response)) {
         source = record.source
         transId = record.transId
-        idlastmodif = record.revision 
+        idlastmodif = record.revision
 		ret.push(`<tr>`)
         ret.push(`<th> Ressources types </th>`)
         ret.push(`<th> Languages </th>`)
@@ -73,10 +76,28 @@ xhr.onload = function () {
         ret.push(`</tr>`)
 	}
 
+    for (const record of entryRecords(xhr.response)) {
+        retJson.push({
+            'title': record.title,
+            'source': record.source,
+            'transId': record.transId,
+            'idlastmodif': record.revision,
+            'types': record.types,
+            'language': record.language
+        });
+    }
+
+    for (const record of retJson) {
+
+    }
+
+    console.log(JSON.stringify(retJson, null, 4));
+    // console.log(retJson[0])
+
+
     ret.push("</table>")
-    console.log(ret.join("\n"))
+    // console.log(ret.join("\n"))
     //console.log(JSON.stringify(xhr.response, null, 8))
-    document.getElementById
         
 };
 // Envoyer la requête JSON, transformé en chaîne, au serveur
@@ -84,9 +105,9 @@ xhr.onload = function () {
 xhr.send(JSON.stringify(yourQuery));
 
 // appel de ta fonction createHttpRequestDiegesis
-addEventListener("DOMContentLoaded", (event) => {
-    createHttpRequestDiegesis();
-});
+// document.addEventListener("DOMContentLoaded", (event) => {
+//     createHttpRequestDiegesis();
+// });
 
 
 // A FAIRE
