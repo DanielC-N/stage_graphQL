@@ -1,0 +1,19 @@
+/* *{
+    color: black;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+} */
+
+.categories{
+
+    color: black;
+    flex : auto;
+    gap: 50px;
+}
+
+.tableau{
+   flex: auto;
+   color: red;
+   
+}
