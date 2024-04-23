@@ -1,32 +1,27 @@
 .tableau{
     display: flex;
-    flex-direction: column;
-    color: rgb(154, 84, 154);
-    gap: 20px;
-    border: 1px solid black;
-   
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    
     
 }
-
-.titres {
-    display: flex;
-    flex-direction: row;
+.categories,.liens,.langues,.ressources{
+   flex-grow: 1;
+   padding-top: 5px;
+   padding-bottom: 5px;
 }
 
 .categories{
+    
     color: black;
-    flex: auto;
     text-align: center;
-    padding: 5px;
-    justify-content: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 25px;
+    background-color: rgb(145, 97, 156);
 
-        
-}
-.elements{
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
 }
 
 .ressources{
@@ -44,16 +39,21 @@
 .langues{
     text-align: center;
     width: 20%;
+    
+}
+.odd{
+    background-color: #dccfde;
+    
+}
+.even{
+    background-color: rgb(139, 124, 160);
 }
 
-.categories:nth-child(1){
-    width: 20%;
-    align-content: baseline;
+a {
+    color: black;
+   text-decoration: none; 
 }
-.categories:nth-child(2){
-    width: 20%;
-    align-content: baseline;
-}
-.categories:nth-child(3){
-    width: 60%;
+
+a:hover{
+    color:#674df3;
 }

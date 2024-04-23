@@ -185,26 +185,24 @@ const ret = [];
 const baseAdress = "https://diegesis.bible/entry/details/"
 
 ret.push(`<div class= "tableau">`)
+        
+    ret.push(`<div class="categories ressources"> Resource types </div>`)
+    ret.push(`<div class="categories langues"> Languages </div>`)
+    ret.push(`<div class="categories liens"> Titles </div>`)
+       
 
-
-        ret.push(`<div class = "titres">`)
-            ret.push(`<div class="categories"> Ressources types </div>`)
-            ret.push(`<div class="categories"> Languages </div>`)
-            ret.push(`<div class="categories"> Titles </div>`)
-        ret.push(`</div>`)
+let rowType="odd"       
 
 for (const rec of retJson){
     source = rec.source
     transId = rec.transId
     idlastmodif = rec.revision
-    ret.push(`<div class= "elements">`)
-        ret.push(`<div class = "ressources"> ${rec.types }</div>`)
-        ret.push(`<div class = "langues"> ${rec.language } </div>`)
-        ret.push(`<div class="liens" <a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">${rec.title}</a> </div>`)
-    ret.push(`</div>`);
-    
+    ret.push(`<div class="ressources ${rowType}"> ${rec.types }</div>`)
+    ret.push(`<div class="langues ${rowType}"> ${rec.language } </div>`)
+    ret.push(`<div class="liens ${rowType}"><a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">${rec.title}</a> </div>`)
+    rowType=rowType=="odd"? "even": "odd"
 }
-    ret.push("</div>")
+
 ret.push(`</div>`)
 
 document.getElementById("myScriptTarget").innerHTML= ret.join("\n")
