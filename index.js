@@ -1,8 +1,9 @@
 // Importer XMLHttpRequest car node !== navigateur
-// import XMLHttpRequest from 'xhr2';
-// const XMLHttpRequest = require('xhr2');
+ //import XMLHttpRequest from 'xhr2';
+ //const XMLHttpRequest = require('xhr2');
 
-// Variables pour serveur et requête
+//Variables pour serveur et requête
+
 const yourServerUrl = 'https://diegesis.bible/graphql'
 const yourQuery = {
     query: `{
@@ -18,6 +19,7 @@ const yourQuery = {
         
     }`
 };
+
 
 function createHttpRequestDiegesis() {
 
@@ -36,11 +38,11 @@ xhr.open('POST', yourServerUrl);
 xhr.setRequestHeader('Content-Type', 'application/json');
 
 const entryRecords = function (response) {
-    // console.log(JSON.stringify(response, null, 4))
+     console.log(JSON.stringify(response, null, 4))
 	return response["data"]["localEntries"]
 }
 
-const baseAdress = "https://diegesis.bible/entry/details/"
+//const baseAdress = "https://diegesis.bible/entry/details/"
 
 
 // Fonction 'callback' qui sera appelé quand la réponse arrivera
@@ -101,8 +103,9 @@ xhr.onload = function () {
         
 };
 // Envoyer la requête JSON, transformé en chaîne, au serveur
-// Le client attend une réponse, puis execute la fonction callback
+// Le client attend une réponse, puis execute la fonction callback */
 xhr.send(JSON.stringify(yourQuery));
+
 
 // appel de ta fonction createHttpRequestDiegesis
 // document.addEventListener("DOMContentLoaded", (event) => {
