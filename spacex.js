@@ -26,7 +26,7 @@ xhr.open('POST',spacexUrl);
 xhr.setRequestHeader('Content-Type', 'application/json');
 
 const entryRecords = function (response) {
-     console.log(JSON.stringify(response, null, 4))
+    console.log(JSON.stringify(response, null, 4))
     return response["data"] ["company"]
 }
 

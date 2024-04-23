@@ -183,27 +183,28 @@ const retJson = [
 
 const ret = [];
 const baseAdress = "https://diegesis.bible/entry/details/"
+
 ret.push(`<div class= "tableau">`)
 
-ret.push("<table>");
-ret.push(`<tr>`)
-ret.push(`<th class=categories scope="col"> Ressources types </th>`)
-ret.push(`<th class=categories scope="col"> Languages </th>`)
-ret.push(`<th class=categories scope="col"> Title </th>`)
-ret.push(`</tr>`)
+
+        ret.push(`<div class = "titres">`)
+            ret.push(`<div class="categories"> Ressources types </div>`)
+            ret.push(`<div class="categories"> Languages </div>`)
+            ret.push(`<div class="categories"> Titles </div>`)
+        ret.push(`</div>`)
+
 for (const rec of retJson){
     source = rec.source
     transId = rec.transId
     idlastmodif = rec.revision
-    ret.push(`<tr>`)
-    ret.push(`<td> ${rec.types }</td>`)
-    ret.push(`<td> ${rec.language } </td>`)
-    ret.push(`<td><a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">${rec.title}</a> </td>`)
-    ret.push(`</tr>`);
+    ret.push(`<div class= "elements">`)
+        ret.push(`<div class = "ressources"> ${rec.types }</div>`)
+        ret.push(`<div class = "langues"> ${rec.language } </div>`)
+        ret.push(`<div class="liens" <a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">${rec.title}</a> </div>`)
+    ret.push(`</div>`);
     
 }
-
-ret.push("</table>")
+    ret.push("</div>")
 ret.push(`</div>`)
 
 document.getElementById("myScriptTarget").innerHTML= ret.join("\n")
