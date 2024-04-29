@@ -186,9 +186,9 @@ const baseAdress = "https://diegesis.bible/entry/details/"
 
 ret.push(`<div class= "tableau">`)
         
-    ret.push(`<div class="categories ressources"> Resource types </div>`)
-    ret.push(`<div class="categories langues"> Languages </div>`)
-    ret.push(`<div class="categories liens"> Titles </div>`)
+    ret.push(`<div class="categories ressources "> Resource types </div>`)
+    ret.push(`<div class="categories langues "> Languages </div>`)
+    ret.push(`<div class="categories liens "> Titles </div>`)
        
 
 let rowType="odd"       
@@ -197,10 +197,12 @@ for (const rec of retJson){
     source = rec.source
     transId = rec.transId
     idlastmodif = rec.revision
-    ret.push(`<div class="ressources ${rowType}"> ${rec.types }</div>`)
-    ret.push(`<div class="langues ${rowType}"> ${rec.language } </div>`)
-    ret.push(`<div class="liens ${rowType}"><a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">${rec.title}</a> </div>`)
+    //ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">`)
+    ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}" class="ressources ${rowType}">${rec.types}</a>`)
+    ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}" class="langues ${rowType}">${rec.language}</a>`)
+    ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}" class="liens ${rowType}">${rec.title}</a>`)
     rowType=rowType=="odd"? "even": "odd"
+    //ret.push(`</a>`)
 }
 
 ret.push(`</div>`)

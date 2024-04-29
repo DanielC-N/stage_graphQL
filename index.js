@@ -1,6 +1,6 @@
 // Importer XMLHttpRequest car node !== navigateur
  //import XMLHttpRequest from 'xhr2';
- //const XMLHttpRequest = require('xhr2');
+ const XMLHttpRequest = require('xhr2');
 
 //Variables pour serveur et requête
 
@@ -51,7 +51,7 @@ const entryRecords = function (response) {
 xhr.onload = function () {
     let source = ""
     let transId = ""
-    let idlastmodif = ""
+    let idlastmodif= ""
 	const ret = []
     const retJson = []
 	ret.push("<table>")
@@ -83,9 +83,9 @@ xhr.onload = function () {
             'title': record.title,
             'source': record.source,
             'transId': record.transId,
-            'idlastmodif': record.revision,
             'types': record.types,
-            'language': record.language
+            'language': record.language,
+            'idlastmodif': record.revision
         });
     }
 
