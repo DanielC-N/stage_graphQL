@@ -51,13 +51,14 @@ const entryRecords = function (response) {
 xhr.onload = function () {
     let source = ""
     let transId = ""
-    let idlastmodif= ""
+    let revision= ""
 	const ret = []
     const retJson = []
 	ret.push("<table>")
 	for (const record of entryRecords(xhr.response)) {
         source = record.source
         transId = record.transId
+        revision = record.revision
 		ret.push(`<tr>`)
         ret.push(`<th> Ressources types </th>`)
         ret.push(`<th> Languages </th>`)

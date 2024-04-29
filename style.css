@@ -12,19 +12,23 @@
 
     }
     .categories,.liens,.langues,.ressources{
-    flex-grow: 1;
-    padding-top: 5px;
-    padding-bottom: 5px;
+        display: flex;
+        flex-grow: 1;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 20px;
+        align-items: center;
+        justify-content: center;
     
     }
 
     .categories{
-        
+        display: flex;
         color: white;
-        text-align: center;
+        justify-content: center;
         flex-wrap: wrap;
-        font-size: 20px;
         background-color: #674df3;      
+        align-items: center;
 
     }
 
@@ -67,6 +71,7 @@
 
 
 }
+
 @media (min-width:1025px) {
     
     .tableau{
@@ -94,10 +99,6 @@
 
     }
 
-
-        
-       
-    }
     .ressources{
         flex-direction: column;
         text-align: center;
@@ -129,7 +130,7 @@
     }
 
     a:hover{
-        color:#674df3;*/
+        color:#674df3;
     }
 
 }
