@@ -58,7 +58,6 @@ xhr.onload = function () {
 	for (const record of entryRecords(xhr.response)) {
         source = record.source
         transId = record.transId
-        idlastmodif = record.revision
 		ret.push(`<tr>`)
         ret.push(`<th> Ressources types </th>`)
         ret.push(`<th> Languages </th>`)
@@ -85,7 +84,7 @@ xhr.onload = function () {
             'transId': record.transId,
             'types': record.types,
             'language': record.language,
-            'idlastmodif': record.revision
+            'revision': record.revision
         });
     }
 

@@ -4,7 +4,7 @@ const retJson = [
         "title": "American Standard Version (1901)",
         "source": "eBible",
         "transId": "eng-asv",
-        "idlastmodif": "2023-03-03",
+        "revision": "2023-03-03",
         "types": [
             "bible"
         ],
@@ -14,7 +14,7 @@ const retJson = [
         "title": "Berean Study Bible",
         "source": "DBL",
         "transId": "bba9f40183526463",
-        "idlastmodif": "3",
+        "revision": "3",
         "types": [
             "bible"
         ],
@@ -24,7 +24,7 @@ const retJson = [
         "title": "Bible in Basic English",
         "source": "eBible",
         "transId": "engBBE",
-        "idlastmodif": "2020-04-17",
+        "revision": "2020-04-17",
         "types": [
             "bible"
         ],
@@ -34,7 +34,7 @@ const retJson = [
         "title": "Darby Translation",
         "source": "eBible",
         "transId": "engDBY",
-        "idlastmodif": "2019-11-15",
+        "revision": "2019-11-15",
         "types": [
             "bible"
         ],
@@ -44,7 +44,7 @@ const retJson = [
         "title": "Easy-to-Read Version",
         "source": "eBible",
         "transId": "engerv",
-        "idlastmodif": "2018-08-30",
+        "revision": "2018-08-30",
         "types": [
             "bible"
         ],
@@ -54,7 +54,7 @@ const retJson = [
         "title": "Free Bible Version",
         "source": "DBL",
         "transId": "65eec8e0b60e656b",
-        "idlastmodif": "9",
+        "revision": "9",
         "types": [
             "bible"
         ],
@@ -64,7 +64,7 @@ const retJson = [
         "title": "French GLT",
         "source": "DCS",
         "transId": "69772",
-        "idlastmodif": "1",
+        "revision": "1",
         "types": [
             "bible"
         ],
@@ -74,7 +74,7 @@ const retJson = [
         "title": "King James Version [eng] without Strong's numbers, 1769 standardized text",
         "source": "DBL",
         "transId": "de4e12af7f28f599",
-        "idlastmodif": "5",
+        "revision": "5",
         "types": [
             "bible"
         ],
@@ -84,7 +84,7 @@ const retJson = [
         "title": "Louis Segond 1910",
         "source": "DCS",
         "transId": "70206",
-        "idlastmodif": "2",
+        "revision": "2",
         "types": [
             "bible"
         ],
@@ -94,7 +94,7 @@ const retJson = [
         "title": "Reina Valera 1909",
         "source": "DBL",
         "transId": "592420522e16049f",
-        "idlastmodif": "7",
+        "revision": "7",
         "types": [
             "bible"
         ],
@@ -104,7 +104,7 @@ const retJson = [
         "title": "Sainte Bible néo-Crampon Libre",
         "source": "eBible",
         "transId": "francl",
-        "idlastmodif": "2023-03-04",
+        "revision": "2023-03-04",
         "types": [
             "bible"
         ],
@@ -114,7 +114,7 @@ const retJson = [
         "title": "Santa Biblia — Reina Valera 1909",
         "source": "eBible",
         "transId": "spaRV1909",
-        "idlastmodif": "2013-12-13",
+        "revision": "2013-12-13",
         "types": [
             "bible"
         ],
@@ -124,7 +124,7 @@ const retJson = [
         "title": "Texto Puente Literal",
         "source": "DCS",
         "transId": "64560",
-        "idlastmodif": "1",
+        "revision": "1",
         "types": [
             "bible"
         ],
@@ -134,7 +134,7 @@ const retJson = [
         "title": "Texto Puente Simple",
         "source": "DCS",
         "transId": "64562",
-        "idlastmodif": "1",
+        "revision": "1",
         "types": [
             "bible"
         ],
@@ -144,7 +144,7 @@ const retJson = [
         "title": "unfoldingWord® Greek New Testament",
         "source": "DCS",
         "transId": "52426",
-        "idlastmodif": "30",
+        "revision": "30",
         "types": [
             "bible"
         ],
@@ -154,7 +154,7 @@ const retJson = [
         "title": "unfoldingWord® Literal Text",
         "source": "DCS",
         "transId": "11419",
-        "idlastmodif": "46",
+        "revision": "46",
         "types": [
             "bible"
         ],
@@ -164,7 +164,7 @@ const retJson = [
         "title": "unfoldingWord® Simplified Text",
         "source": "DCS",
         "transId": "11992",
-        "idlastmodif": "45",
+        "revision": "45",
         "types": [
             "bible"
         ],
@@ -196,7 +196,7 @@ let rowType="odd"
 for (const rec of retJson){
     source = rec.source
     transId = rec.transId
-    idlastmodif = rec.revision
+    revision = rec.revision
     //ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}">`)
     ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}" class="ressources ${rowType}">${rec.types}</a>`)
     ret.push(`<a target="_blank" href="${baseAdress}${rec.source}/${rec.transId}/${rec.revision}" class="langues ${rowType}">${rec.language}</a>`)
